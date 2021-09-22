@@ -39,6 +39,11 @@ subhead2.paragraph_format.left_indent = Inches(0.7)
 
 #Experience
 subhead=document.add_heading('Experience', 2)
+subhead2=document.add_paragraph('')
+italic_subhead2 = subhead2.add_run('Vinod Gupta School of Management, IIT Kharagpur | October 2019 - Present')
+italic_subhead2.font.color.rgb = RGBColor(0,100,245)
+italic_subhead2.italic=True
+subhead2.paragraph_format.left_indent = Inches(0.7)
 
 paragraph = document.add_paragraph('Assist with the planning and preparatory work of the Office’s work programme '
                                    'and/or project initiatives. Monitor status of programme and/or project proposals '
@@ -49,7 +54,7 @@ paragraph = document.add_paragraph('Assist with the planning and preparatory wor
                   style='List Number 2')
 font =paragraph.style.font
 font.name='Arial'
-font.size=Pt(11)
+font.size=Pt(10)
 paragraph.alignment = WD_ALIGN_PARAGRAPH.JUSTIFY
 paragraph.paragraph_format.line_spacing = Inches(0.3)
 
