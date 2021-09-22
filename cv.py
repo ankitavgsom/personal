@@ -1,12 +1,11 @@
-import docx
 from docx import Document
-from docx.enum.text import WD_ALIGN_PARAGRAPH, WD_UNDERLINE
-from docx.enum.style import WD_STYLE_TYPE, WD_BUILTIN_STYLE
-from docx.styles import BabelFish
-from docx.styles.latent import LatentStyles
+from docx.enum.text import WD_ALIGN_PARAGRAPH
 from docx.shared import Inches, Cm
-from docx.enum.text import WD_COLOR_INDEX
 from docx.shared import RGBColor
+from docx2pdf import convert
+import os
+
+
 
 from docx.shared import Pt
 
@@ -14,8 +13,8 @@ document=Document()
 style = document.styles['Normal']
 sections = document.sections
 for section in sections:
-    section.top_margin = Cm(1)
-    section.bottom_margin = Cm(1)
+    section.top_margin = Cm(0.5)
+    section.bottom_margin = Cm(0.5)
     section.left_margin = Cm(1.5)
     section.right_margin = Cm(1.5)
 
@@ -28,8 +27,8 @@ subhead2.paragraph_format.left_indent = Inches(0.7)
 
 
 #NAME
-heading=document.add_heading('ANKITA MANDAL', 1)
-heading.alignment = WD_ALIGN_PARAGRAPH.CENTER
+heading=document.add_heading('ANKITA MANDAL', 0)
+heading.alignment = WD_ALIGN_PARAGRAPH.RIGHT
 
 #Personal Details
 subhead2=document.add_paragraph('')
@@ -208,6 +207,8 @@ italic_subhead2.font.color.rgb = RGBColor(0x22, 0x8b, 0x22)
 subhead2.paragraph_format.left_indent = Inches(0.5)
 
 
+
+
 paragraph = document.add_paragraph('''Created ''',style='List Bullet 2')
 paragraph.add_run('''a Word File''').bold=True
 paragraph.add_run(''' with Python''')
@@ -222,6 +223,19 @@ paragraph = document.add_paragraph('''The word file has been''',style='List Bull
 paragraph.add_run(''' converted to pdf''').bold=True
 paragraph.add_run(''' with Python''')
 paragraph.paragraph_format.left_indent = Inches(1)
+
+subhead2=document.add_paragraph('')
+italic_subhead2 = subhead2.add_run('Git-hub URL:')
+italic_subhead2.italic=True
+subhead2.paragraph_format.left_indent = Inches(0.5)
+
+link = document.add_paragraph('')
+italic_link = link.add_run('https://github.com/ankitavgsom/personal/blob/main/cv.py')
+italic_link.italic=True
+italic_link.underline=True
+italic_link.font.color.rgb = RGBColor(0,0,139)
+link.paragraph_format.left_indent = Inches(0.5)
+
 
 
 font =paragraph.style.font
@@ -295,3 +309,6 @@ subhead2.paragraph_format.left_indent = Inches(1)
 
 
 document.save('cv.docx')
+os.startfile('cv.docx')
+
+convert("cv.docx", "CV_Pthon_Ankita Mandal.pdf")
