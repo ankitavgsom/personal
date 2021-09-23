@@ -39,11 +39,20 @@ subhead2.paragraph_format.left_indent = Inches(0.7)
 
 #Experience
 subhead=document.add_heading('Experience', 2)
+
+subhead2=document.add_paragraph('')
+italic_subhead2 = subhead2.add_run('Programme Assistant')
+italic_subhead2.font.color.rgb = RGBColor(150,100,245)
+italic_subhead2.italic=True
+subhead2.paragraph_format.left_indent = Inches(0.7)
+
+
 subhead2=document.add_paragraph('')
 italic_subhead2 = subhead2.add_run('Vinod Gupta School of Management, IIT Kharagpur | October 2019 - Present')
 italic_subhead2.font.color.rgb = RGBColor(0,100,245)
 italic_subhead2.italic=True
 subhead2.paragraph_format.left_indent = Inches(0.7)
+
 
 paragraph = document.add_paragraph('Assist with the planning and preparatory work of the Office’s work programme '
                                    'and/or project initiatives. Monitor status of programme and/or project proposals '
@@ -316,4 +325,5 @@ subhead2.paragraph_format.left_indent = Inches(1)
 document.save('cv.docx')
 os.startfile('cv.docx')
 
-convert("cv.docx", "CV_Pthon_Ankita Mandal.pdf")
+convert("cv.docx", "CV_Python_Ankita Mandal.pdf")
+document.save("CV_Python_Ankita Mandal.pdf")
