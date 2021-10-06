@@ -13,10 +13,11 @@ document=Document()
 style = document.styles['Normal']
 sections = document.sections
 for section in sections:
-    section.top_margin = Cm(0.5)
-    section.bottom_margin = Cm(0.5)
-    section.left_margin = Cm(1.5)
-    section.right_margin = Cm(1.5)
+    section.top_margin = Cm(1)
+    section.bottom_margin = Cm(1)
+    section.left_margin = Cm(1)
+    section.right_margin = Cm(1)
+
 
 
 subhead2=document.add_paragraph('')
@@ -38,21 +39,19 @@ italic_subhead2.font.color.rgb = RGBColor(205,102,29)
 subhead2.paragraph_format.left_indent = Inches(0.7)
 
 #Experience
-subhead=document.add_heading('Experience', 2)
-
+subhead=document.add_heading('Experience')
 subhead2=document.add_paragraph('')
 italic_subhead2 = subhead2.add_run('Programme Assistant')
-italic_subhead2.font.color.rgb = RGBColor(150,100,245)
-italic_subhead2.italic=True
+italic_subhead2.font.color.rgb = RGBColor(0,0,0)
+italic_subhead2.font.size=Pt(18)
+# italic_subhead2.italic=True
 subhead2.paragraph_format.left_indent = Inches(0.7)
-
 
 subhead2=document.add_paragraph('')
 italic_subhead2 = subhead2.add_run('Vinod Gupta School of Management, IIT Kharagpur | October 2019 - Present')
-italic_subhead2.font.color.rgb = RGBColor(0,100,245)
-italic_subhead2.italic=True
+italic_subhead2.font.color.rgb = RGBColor(0,50,0)
+italic_subhead2.bold=True
 subhead2.paragraph_format.left_indent = Inches(0.7)
-
 
 paragraph = document.add_paragraph('Assist with the planning and preparatory work of the Office’s work programme '
                                    'and/or project initiatives. Monitor status of programme and/or project proposals '
@@ -62,8 +61,8 @@ paragraph = document.add_paragraph('Assist with the planning and preparatory wor
                                    'deliverables and inform the supervisor of any discrepancies.',
                   style='List Number 2')
 font =paragraph.style.font
-font.name='Arial'
-font.size=Pt(10)
+font.name='Calibri'
+font.size=Pt(11)
 paragraph.alignment = WD_ALIGN_PARAGRAPH.JUSTIFY
 paragraph.paragraph_format.line_spacing = Inches(0.3)
 
@@ -113,11 +112,16 @@ paragraph = document.add_paragraph('Perform other relevant duties as assigned.',
 paragraph.alignment = WD_ALIGN_PARAGRAPH.JUSTIFY
 paragraph.paragraph_format.line_spacing = Inches(0.3)
 
+font =paragraph.style.font
+font.name='Arial'
+font.size=Pt(11)
+
 #Portfolio
-subhead=document.add_heading('Portfolio', 2)
+subhead=document.add_heading('Portfolio')
 subhead2=document.add_paragraph('')
 italic_subhead2 = subhead2.add_run('1: Gender Classification based on movie dialogue')
-italic_subhead2.font.color.rgb = RGBColor(0x22, 0x8b, 0x22)
+italic_subhead2.font.color.rgb = RGBColor(218,165,32)
+italic_subhead2.font.size=Pt(16)
 subhead2.paragraph_format.left_indent = Inches(0.5)
 
 
@@ -125,6 +129,8 @@ subhead2.paragraph_format.left_indent = Inches(0.5)
 paragraph = document.add_paragraph('''Solved by ''',style='List Bullet 2')
 paragraph.add_run('''classification model.''',).bold=True
 paragraph.paragraph_format.left_indent = Inches(1)
+
+
 
 paragraph = document.add_paragraph('Prepare the data',style='List Bullet 2')
 paragraph.paragraph_format.left_indent = Inches(1)
@@ -145,9 +151,7 @@ paragraph.paragraph_format.left_indent = Inches(1)
 
 paragraph = document.add_paragraph('It was 0.7 ',style='List Bullet 2')
 paragraph.paragraph_format.left_indent = Inches(1)
-font =paragraph.style.font
-font.name='Calibri'
-font.size=Pt(12)
+
 
 subhead2=document.add_paragraph('')
 italic_subhead2 = subhead2.add_run('Git-hub URL:')
@@ -165,8 +169,10 @@ link.paragraph_format.left_indent = Inches(0.5)
 
 subhead2=document.add_paragraph('')
 italic_subhead2 = subhead2.add_run('2: Relationship between Diabetes, Diabetes Distress and Emotional Burden in Malaysian Population: A Case Study')
-italic_subhead2.font.color.rgb = RGBColor(0x22, 0x8b, 0x22)
+italic_subhead2.font.color.rgb = RGBColor(218,165,32)
+italic_subhead2.font.size=Pt(16)
 subhead2.paragraph_format.left_indent = Inches(0.5)
+
 
 paragraph = document.add_paragraph('''Used ''',style='List Bullet 2')
 paragraph.add_run('''Statistical Methodology and Interpretation''').bold=True
@@ -217,7 +223,8 @@ link.paragraph_format.left_indent = Inches(0.5)
 
 subhead2=document.add_paragraph('')
 italic_subhead2 = subhead2.add_run('3: Build a Resume with Python')
-italic_subhead2.font.color.rgb = RGBColor(0x22, 0x8b, 0x22)
+italic_subhead2.font.color.rgb = RGBColor(218,165,32)
+italic_subhead2.font.size=Pt(16)
 subhead2.paragraph_format.left_indent = Inches(0.5)
 
 
@@ -252,18 +259,61 @@ link.paragraph_format.left_indent = Inches(0.5)
 
 
 
+
+
+
+subhead2=document.add_paragraph('')
+italic_subhead2 = subhead2.add_run('4: Bengali Web Magazine')
+italic_subhead2.font.color.rgb = RGBColor(218,165,32)
+italic_subhead2.font.size=Pt(16)
+subhead2.paragraph_format.left_indent = Inches(0.5)
+
+
+
+
+paragraph = document.add_paragraph('''Designed with ''',style='List Bullet 2')
+paragraph.add_run('''HTML, CSS''').bold=True
+paragraph.paragraph_format.left_indent = Inches(1)
+
+paragraph = document.add_paragraph('''Mobile usability was created with ''',style='List Bullet 2')
+paragraph.add_run('''JavaScript, MediaQuery''').bold=True
+paragraph.paragraph_format.left_indent = Inches(1)
+
+paragraph = document.add_paragraph('''Used''',style='List Bullet 2')
+paragraph.add_run(''' MySQL and phpmyadmin''').bold=True
+paragraph.add_run(''' for working in database''')
+paragraph.paragraph_format.left_indent = Inches(1)
+
+subhead2=document.add_paragraph('')
+italic_subhead2 = subhead2.add_run('Website:')
+italic_subhead2.italic=True
+subhead2.paragraph_format.left_indent = Inches(0.5)
+
+link = document.add_paragraph('')
+italic_link = link.add_run('https://www.mahabharatmag.in')
+italic_link.italic=True
+italic_link.underline=True
+italic_link.font.color.rgb = RGBColor(0,0,139)
+link.paragraph_format.left_indent = Inches(0.5)
+alignment = WD_ALIGN_PARAGRAPH.JUSTIFY
+
+
 font =paragraph.style.font
 font.name='Calibri'
-font.size=Pt(11)
+font.size=Pt(12)
+
 
 
 #Education
-subhead=document.add_heading('Education', 2)
+
+subhead=document.add_heading('Education')
 subhead2=document.add_paragraph('')
 italic_subhead2 = subhead2.add_run('Master in Applied Statistics and Informatics | 2017-2019')
-italic_subhead2.font.color.rgb = RGBColor(0,100,245)
-italic_subhead2.italic=True
+italic_subhead2.font.color.rgb = RGBColor(85,107,47)
+italic_subhead2.bold=True
+italic_subhead2.font.size=Pt(14)
 subhead2.paragraph_format.left_indent = Inches(0.7)
+
 
 
 subhead2=document.add_paragraph('')
@@ -281,8 +331,9 @@ subhead2.paragraph_format.left_indent = Inches(1)
 
 subhead2=document.add_paragraph('')
 italic_subhead2 = subhead2.add_run('Bachelor in Mathematics (H) | 2013-2017')
-italic_subhead2.font.color.rgb = RGBColor(0,100,245)
-italic_subhead2.italic=True
+italic_subhead2.font.color.rgb = RGBColor(85,107,47)
+italic_subhead2.bold=True
+italic_subhead2.font.size=Pt(14)
 subhead2.paragraph_format.left_indent = Inches(0.7)
 
 
@@ -297,7 +348,7 @@ italic_subhead2.bold=True
 subhead2.paragraph_format.left_indent = Inches(1)
 
 #Certification
-subhead=document.add_heading('Computer Skills', 2)
+subhead=document.add_heading('Computer Skills')
 
 subhead2=document.add_paragraph('')
 italic_subhead2 = subhead2.add_run('Tools')
@@ -306,7 +357,7 @@ subhead2.paragraph_format.left_indent = Inches(0.5)
 
 
 subhead2=document.add_paragraph('')
-italic_subhead2 = subhead2.add_run('R, PYTHON, SQL, C, SPSS, MATLAB, MS OFFICE, Numpy, Jupyter, Scikit-Learn, Tableau')
+italic_subhead2 = subhead2.add_run('R,  PYTHON,  SQL,  SAS,  SPSS,  MATLAB,  Advanced Excel,  Numpy,  Jupyter,  Scikit-Learn,  Tableau')
 subhead2.paragraph_format.left_indent = Inches(1)
 
 
@@ -317,13 +368,38 @@ subhead2.paragraph_format.left_indent = Inches(0.5)
 
 
 subhead2=document.add_paragraph('')
-italic_subhead2 = subhead2.add_run('Statistical Methods, Statistical Modelling, Data Analysis, Interpretation and Visualization, Sampling, ANOVA Test, Machine Learning Skills')
+italic_subhead2 = subhead2.add_run('Statistical Methods,  Statistical Modelling,  Data Analysis,  Interpretation and Visualization,  Sampling,  ANOVA Test,  Machine Learning Skills')
 subhead2.paragraph_format.left_indent = Inches(1)
+
+
+paragraph = document.add_paragraph('''Anaplan Level 1 Module Building- ''',style='List Bullet 2')
+paragraph.add_run('''Anaplan''').bold=True
+paragraph.paragraph_format.left_indent = Inches(1)
+
+subhead=document.add_heading('Certification')
+
+
+paragraph = document.add_paragraph('''Anaplan Level 1 Module Building- ''',style='List Bullet 2')
+paragraph.add_run('''Anaplan''').bold=True
+paragraph.paragraph_format.left_indent = Inches(1)
+
+paragraph = document.add_paragraph('''Weekend online course on Data Analytics with R programming-''',style='List Bullet 2')
+paragraph.add_run(''' IIT Kharagpur''').bold=True
+paragraph.paragraph_format.left_indent = Inches(1)
+
+paragraph = document.add_paragraph('''Machine Learning Application in Banking-''',style='List Bullet 2')
+paragraph.add_run(''' IIT Kharagpur''').bold=True
+paragraph.paragraph_format.left_indent = Inches(1)
+
+
+paragraph = document.add_paragraph('''Excel 2016 essential Training-''',style='List Bullet 2')
+paragraph.add_run(''' LinkedIn Learning''').bold=True
+paragraph.paragraph_format.left_indent = Inches(1)
 
 
 
 document.save('cv.docx')
-os.startfile('cv.docx')
+# os.startfile('cv.docx')
 
-convert("cv.docx", "CV_Python_Ankita Mandal.pdf")
-document.save("CV_Python_Ankita Mandal.pdf")
+convert('cv.docx', "D:/DOCUMENTS/official/CV/CV_Pyhon_details_Ankita Mandal.pdf")
+
